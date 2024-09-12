@@ -1,6 +1,5 @@
 // Filename: index.js
 // Combined code from all files
-
 import React, { useEffect, useState, useRef } from 'react';
 import { SafeAreaView, StyleSheet, View, Text, Button, Alert } from 'react-native';
 
@@ -127,7 +126,19 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         width: 200,
     },
-    appContainer: {
+});
+
+export default function App() {
+    return (
+        <SafeAreaView style={appStyles.container}>
+            <Text style={appStyles.title}>Snake Game</Text>
+            <SnakeGame />
+        </SafeAreaView>
+    );
+}
+
+const appStyles = StyleSheet.create({
+    container: {
         flex: 1,
         marginTop: 20,
     },
@@ -137,12 +148,3 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
 });
-
-export default function App() {
-    return (
-        <SafeAreaView style={styles.appContainer}>
-            <Text style={styles.title}>Snake Game</Text>
-            <SnakeGame />
-        </SafeAreaView>
-    );
-}
